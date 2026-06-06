@@ -349,10 +349,11 @@ AI-Traffic-Violation-Detector/
 │   └── charts/
 │
 ├── screenshots/              # Project screenshots for documentation and portfolio
-│   ├── dashboard.png
-│   ├── vehicle_detection.png
-│   ├── violation_detection.png
-│   └── final_output.png
+│   ├── dashboard_overview.png
+│   ├── live_detection.png
+│   ├── signal_jump_evidence.jpg
+│   ├── violation_details.png
+│   └── violation_statistics.png
 │
 ├── src/                      # Core source code
 │   ├── detector.py           # YOLO model loading and inference wrapper
@@ -463,25 +464,25 @@ python src/main.py --source path/to/video.mp4 --output outputs/ --visualize
 
 ### Dashboard
 
-![Dashboard](screenshots/dashboard.png)
+![Dashboard](./screenshots/dashboard_overview.png)
 
 *The reporting dashboard aggregates all detected violations into a time-series overview. Each bar represents the violation count for a one-hour window. The pie chart in the upper right breaks down violations by type, revealing that red-light infractions account for the majority of detections at this intersection.*
 
 ### Vehicle Detection
 
-![Vehicle Detection](screenshots/vehicle_detection.png)
+![Vehicle Detection](./screenshots/live_detection.png)
 
 *Real-time vehicle detection in action. Each detected vehicle receives a bounding box colored by class (green for cars, blue for trucks, yellow for motorcycles). The confidence score is displayed above each box. Notice the model successfully detects partially occluded vehicles at the far edge of the frame.*
 
 ### Violation Detection
 
-![Violation Detection](screenshots/violation_detection.png)
+![Violation Detection](./screenshots/signal_jump_evidence.jpg)
 
 *A red-light violation captured in progress. The offending vehicle's bounding box is drawn in red, with the violation type and timestamp overlaid. The stop line is visualized as a horizontal magenta line across the lanes. The vehicle's tracked trajectory (shown as a dotted trail) clearly crosses the stop line after the signal state changed to red.*
 
 ### Final Output
 
-![Final Output](screenshots/final_output.png)
+![Final Output](./screenshots/violation_details.png)
 
 *A sample of the final annotated output frame. All compliant vehicles are marked with green bounding boxes, while violators are highlighted in red. The bottom-left corner displays a running count of total violations detected in the current session. The output video file preserves these annotations for review.*
 
